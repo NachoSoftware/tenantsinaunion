@@ -13,13 +13,24 @@
             .main-title {
                 text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
                 color: white;
-                text-align: center;
+                text-align: left;
             }
+            #atun-link{
+                border: 1px solid lightcoral;
+                font-size: x-large;
+                color: lightcoral;
+                float: right;
+                position: absolute;
+                top: 4vh;
+                right: 3vw;
+            }
+
           
         </style>
     </head>
     <body>
         <h1 class="main-title">Housing Liberation: Tenant Unions</h1>
+        <a id="atun-link" href="https://atun-rsia.org/tenant-unions">In your community...</a>
         
         <div id="image-container"></div>
         <script>
@@ -50,8 +61,8 @@
                 let k = 0;
 
                 image_paths.forEach((path, i) => {
-                    const height = (15 + getRandomInt(15)).toString() + 'vh';
-                    const width = (15 + getRandomInt(15)).toString() + 'vw';
+                    const height = (20 + getRandomInt(15)).toString() + 'vh';
+                    const width = (120 + getRandomInt(15)).toString() + 'vw';
 
 
                     const top = (10 + getRandomInt(80)).toString() + 'vh';
@@ -137,7 +148,6 @@
 
             window.onload = function() {
                 const images = getRandomNImages(20);
-                console.log(images)
                 fillPageWithImages(images);
 
             };
