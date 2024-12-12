@@ -8,16 +8,139 @@
         <style>
             html {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                background-color: slategray;
+                background-color: rgb(50, 50, 50);
             }
             .main-title {
-                text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+                text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+                color: white;
                 text-align: center;
             }
+          
         </style>
     </head>
     <body>
-        <h1 class="main-title">Words From The Fight For Home</h1>
-        <h3 class="main-title">Tenant Union Writings</h1>
+        <h1 class="main-title">Housing Liberation: Tenant Unions</h1>
+        
+        <div id="image-container"></div>
+        <script>
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * max);
+            }
+
+            const getRandomNImages = function (n) {
+                // shuffle
+                let curI = allImageFiles.length;
+                let firstI = curI;
+
+                while (curI != 0) {
+                    let randomI = getRandomInt(curI);
+                    curI--;
+
+                    [allImageFiles[curI], allImageFiles[randomI]] = [
+                        allImageFiles[randomI], allImageFiles[curI]];
+                    
+                }
+
+
+                return allImageFiles.slice(0, n);
+            };
+
+            const fillPageWithImages = function(image_paths, x=7, y=8) {
+                const imgContainerElement = document.getElementById('image-container');
+                let k = 0;
+
+                image_paths.forEach((path, i) => {
+                    const height = (15 + getRandomInt(15)).toString() + 'vh';
+                    const width = (15 + getRandomInt(15)).toString() + 'vw';
+
+
+                    const top = (10 + getRandomInt(80)).toString() + 'vh';
+                    const right = (10 + getRandomInt(80)).toString() + 'vw';
+
+                    const figureElement = document.createElement('figure');
+                    figureElement.className = "img-figure";
+                    
+
+
+                    const img = document.createElement('img');
+                    img.src = path;
+                    img.style.maxHeight = height;
+                    img.style.maxWidth = height;
+                    img.style.position = "absolute";
+                    img.style.top = top;
+                    img.style.right = right;
+
+                    figureElement.appendChild(img)
+                    imgContainerElement.appendChild(figureElement);
+                })
+            }
+
+            const allImageFiles = [
+                "assets/bedGreenrock.jpg",
+                "assets/bedGroup.jpg",
+                "assets/bedKeisha.jpg",
+                "assets/bedNoGas.jpg",
+                "assets/bedRutland.jpg",
+                "assets/bedTU2020.png",
+                "assets/cancelRent.jpg",
+                "assets/chicago2016.png",
+                "assets/crownHeights2013.png",
+                "assets/crownHeightsCongress.jpg",
+                "assets/crownHeightsNotOneMoreEviction.jpg",
+                "assets/crownHeightsPalestine.jpg",
+                "assets/crownHeightsWinterEviction.jpg",
+                "assets/crownHeightsZoning.jpg",
+                "assets/gbtu2019.png",
+                "assets/glendale.jpeg",
+                "assets/gracioCourt.jpg",
+                "assets/hillsideVilla.jpg",
+                "assets/honoluluPark.jpg",
+                "assets/honoluluPotluck.jpg",
+                "assets/houston2019.jpg",
+                "assets/houstonCongress.jpg",
+                "assets/houstonGentrification.jpg",
+                "assets/houstonPark.jpg",
+                "assets/houstonTu.jpg",
+                "assets/hyde2018.png",
+                "assets/latu2014.png",
+                "assets/latuBurnNotice.jpg",
+                "assets/latuRenovictions.jpg",
+                "assets/madison2019.jpg",
+                "assets/milwaukee2020.png",
+                "assets/omaha2018.jpg",
+                "assets/philly2016.png",
+                "assets/pstu2020.png",
+                "assets/richmond2018.jpg",
+                "assets/santaBarbara2020.png",
+                "assets/solidarity.png",
+                "assets/sos2017.png",
+                "assets/southDakota2019.png",
+                "assets/tanc2019.jpg",
+                "assets/tancColiseum.jpg",
+                "assets/tancLandlords.jpg",
+                "assets/tancNoBanner.jpg",
+                "assets/tancOutside.jpg",
+                "assets/timeToOrganize.jpg",
+                "assets/valley2020.png",
+                "assets/valleyMobileHome.jpg",
+                "assets/valleyTenantsRights.jpg",
+                "assets/vancouver2017.png",
+                "assets/vancouverChinatown.jpg",
+                "assets/vancouverCourt.jpg",
+                "assets/vancouverCourts.jpg",
+                "assets/vancouverDisruption.jpg",
+                "assets/vancouverParkBeach.jpg",
+                "assets/WoodnerUnionDemand.jpg",
+                "assets/worcester2019.png"
+
+            ];
+
+            window.onload = function() {
+                const images = getRandomNImages(20);
+                console.log(images)
+                fillPageWithImages(images);
+
+            };
+        </script>
     </body>
 </html>
