@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UtF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        <title>Kitchen Table</title>
+        <style>
+            html {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            
+            #atun-link{
+                color: white;
+            }
+
+            .triangle {
+                width: 0;
+                height: 0;
+                border-left: 200px solid transparent;
+                border-right: 200px solid transparent;
+                border-top: 150px solid black;
+                position: relative;
+                margin: 30px auto;
+                transform: scale(0.8);
+            }
+            
+            .triangle-content {
+                position: absolute;
+                top: -135px;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+                width: 200px;
+            }
+            
+            .line {
+                margin: 5px 0;
+                font-family: Arial, sans-serif;
+            }
+            
+            .line.first {
+                color: white;
+                background-color: transparent;
+            }
+            
+            .line.second {
+                color: black;
+                background-color: white;
+                padding: 2px 0;
+            }
+            
+            .line.third {
+                color: white;
+                background-color: transparent;
+            }
+
+             #quiltContainer {
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                flex-direction: row;
+                background-color: white;
+            }
+            
+            #quiltImage {
+                flex: 2;
+                background-image: url('./assets/ktQuilt.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                padding: 20px;
+            }
+            
+            .content {
+                flex: 3;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 40px;
+                background-color: #f8f8f8;
+            }
+            
+            .main-title {
+                color: black;
+                text-align: left;
+                font-size: 3em;
+                font-weight: bolder;
+                margin: 15px 0;
+                text-shadow: 0 0 3px white, 0 0 5px white, 0 0 7px white;
+            }
+
+             .main-title:first-child {
+                font-size: 3em;
+                margin-top: 0;
+            }
+
+            ul {
+                margin: 5px;
+                font-size: large;
+            }
+
+            .description {
+                font-size: large;
+                margin: 0;
+                padding: 15px;
+                background-color: #ffffff;
+                border: 2px solid #333333;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            
+            .highlight {
+                padding: 2px 4px;
+                font-weight: bold;
+            }
+            
+            .key-point {
+                margin: 5px 0;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+       
+        <div id="quiltContainer">
+            <div id="quiltImage"></div>
+            <div class="content">
+                <div class="triangle">
+                    <div class="triangle-content">
+                        <div class="line first">AUTONOMOUS</div>
+                        <div class="line second">TENANTS UNION</div>
+                        <div class="line third">NETWORK</div>
+                    </div>
+                </div>
+                <p class="main-title">Kitchen Table:</p>
+                <p class="main-title">Building A Movement For This Moment</p>
+                 
+                <div class="key-point">
+                    <p class="description">
+                        The <a href="https://atun-rsia.org" class="highlight">Autonomous Tenants Union Network</a> (ATUN-RSIA) is a collaborative of tenant unions in North America who have chosen to remain independent of:
+                    </p>
+                </div>
+                
+                <div class="key-point"  style="margin-left: 30%;">
+                    <ul>
+                        <li><span class="highlight">Non-profits</span></li>
+                        <li><span class="highlight">Foundations</span></li>
+                        <li><span class="highlight">Government funding</span></li>
+                    </ul>
+                </div>
+                
+                <div class="key-point">
+                    <p class="description">
+                        <span class="highlight">in order to build power that led by and responsible to tenants.</span>
+                    </p>
+                </div>
+                
+                <div class="key-point">
+                    <p class="description">
+                        Six years after the formation of the Autonomous Tenants Union Network, in early 2024 four militants from different unions began exchanging notes on their experiences as tenant organizers. Those four were organizers from the Crown Heights Tenants Union, the East of the Lake Local of Tenant and Neighborhood Councils (TANC) in the Bay Area, the Hollywood Local of L.A. Tenants Union (LATU), and the Sacramento Valley Tenants Union. In June of last year, we launched Kitchen Table as a monthly Zoom call for organizers in ATUN-associated tenant unions. In the beginning of 2025, a member of Puget Sound Tenants Union joined the Kitchen Table facilitation team.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    
+    </body>
+</html>
